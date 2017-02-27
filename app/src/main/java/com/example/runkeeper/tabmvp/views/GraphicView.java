@@ -1,23 +1,29 @@
-package com.example.runkeeper.tabmvp;
+package com.example.runkeeper.tabmvp.views;
 
 import android.content.Context;
+import android.support.design.widget.CoordinatorLayout;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.RelativeLayout;
+
+import com.example.runkeeper.tabmvp.R;
+import com.example.runkeeper.tabmvp.ShareContract;
 
 /**
  * Created by davidcrelling on 2/24/17.
  */
 
-public class GraphicView extends RelativeLayout implements ShareContract.GraphicView
+public class GraphicView extends CoordinatorLayout implements ShareContract.GraphicView
 {
 
     private View rootView;
     private ShareContract.GraphicPresenter presenter;
+    private Context context;
 
     public GraphicView(Context context)
     {
         super(context);
+        this.context = context;
         init();
     }
 

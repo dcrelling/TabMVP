@@ -1,4 +1,4 @@
-package com.example.runkeeper.tabmvp;
+package com.example.runkeeper.tabmvp.views;
 
 import android.content.Context;
 import android.support.design.widget.CoordinatorLayout;
@@ -8,6 +8,9 @@ import android.support.v4.view.ViewPager;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.example.runkeeper.tabmvp.R;
+import com.example.runkeeper.tabmvp.ShareContract;
 
 import static com.example.runkeeper.tabmvp.R.id.container;
 

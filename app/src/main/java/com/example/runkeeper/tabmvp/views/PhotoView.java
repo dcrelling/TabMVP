@@ -1,9 +1,12 @@
-package com.example.runkeeper.tabmvp;
+package com.example.runkeeper.tabmvp.views;
 
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.RelativeLayout;
+
+import com.example.runkeeper.tabmvp.R;
+import com.example.runkeeper.tabmvp.ShareContract;
 
 /**
  * Created by davidcrelling on 2/24/17.
