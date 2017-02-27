@@ -1,7 +1,6 @@
 package com.example.runkeeper.tabmvp.views;
 
 import android.content.Context;
-import android.util.AttributeSet;
 import android.view.View;
 import android.widget.RelativeLayout;
 
@@ -16,16 +15,18 @@ public class PhotoView extends RelativeLayout implements ShareContract.PhotoView
 {
     private View rootView;
     private ShareContract.PhotoPresenter presenter;
+    private Context context;
 
     public PhotoView(Context context)
     {
         super(context);
+        this.context = context;
         init();
     }
 
     public void init()
     {
-        rootView = inflate(getContext(), R.layout.fragment_main_one, this);
+        rootView = inflate(context, R.layout.fragment_main_one, this);
     }
 
     @Override

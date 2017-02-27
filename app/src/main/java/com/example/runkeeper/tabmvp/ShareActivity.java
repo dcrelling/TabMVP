@@ -20,11 +20,11 @@ public class ShareActivity extends AppCompatActivity implements ShareContract.Co
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        presenter = SharePresenter.Factory.create(getApplicationContext(), this);
-        TabViewContainer tabViewContainer = new TabViewContainer(this);
-        tabViewContainer.setPresenter(presenter);
-        tabViewContainer.setUpViewPagerAndAdaptor();
-        setContentView(tabViewContainer.getRootView());
+        presenter = SharePresenter.Factory.create(this, this);
+//        TabViewContainer tabViewContainer = new TabViewContainer(this);
+//        tabViewContainer.setPresenter(presenter);
+//        tabViewContainer.setUpViewPagerAndAdaptor();
+        setContentView(presenter.getStartView());
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
     }

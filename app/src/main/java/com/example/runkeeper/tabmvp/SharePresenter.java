@@ -7,6 +7,7 @@ import android.view.View;
 import com.example.runkeeper.tabmvp.views.GraphicView;
 import com.example.runkeeper.tabmvp.views.MapView;
 import com.example.runkeeper.tabmvp.views.PhotoView;
+import com.example.runkeeper.tabmvp.views.TabViewContainer;
 
 public class SharePresenter implements ShareContract.PhotoPresenter, ShareContract.MapPresenter, ShareContract.GraphicPresenter, ShareContract.TabPresenter
 {
@@ -18,18 +19,18 @@ public class SharePresenter implements ShareContract.PhotoPresenter, ShareContra
     private ShareContract.TabViewContainer tabViewContainer;
 
 
-    public SharePresenter(ShareContract.Controller controller, ShareContract.PhotoView photoView, ShareContract.MapView mapView, ShareContract.GraphicView graphicView)
+    public SharePresenter(ShareContract.Controller controller, ShareContract.PhotoView photoView, ShareContract.MapView mapView, ShareContract.GraphicView graphicView, ShareContract.TabViewContainer tabViewContainer)
     {
         this.controller = controller;
         this.photoView = photoView;
         this.mapView = mapView;
         this.graphicView = graphicView;
-        //this.tabViewContainer = tabViewContainer;
+        this.tabViewContainer = tabViewContainer;
         mapView.setPresenter(this);
         photoView.setPresenter(this);
         graphicView.setPresenter(this);
-//        tabViewContainer.setPresenter(this);
-//        tabViewContainer.setUpViewPagerAndAdaptor();
+        tabViewContainer.setPresenter(this);
+        tabViewContainer.setUpViewPagerAndAdaptor();
     }
 
     public View getStartView()
@@ -63,8 +64,8 @@ public class SharePresenter implements ShareContract.PhotoPresenter, ShareContra
             ShareContract.MapView mapView = new MapView(context);
             ShareContract.PhotoView photoView = new PhotoView(context);
             ShareContract.GraphicView graphicView = new GraphicView(context);
-            //ShareContract.TabViewContainer tabViewContainer = new TabViewContainer(context);
-            SharePresenter presenter = new SharePresenter(controller, photoView, mapView, graphicView);
+            ShareContract.TabViewContainer tabViewContainer = new TabViewContainer(context);
+            SharePresenter presenter = new SharePresenter(controller, photoView, mapView, graphicView, tabViewContainer);
             return presenter;
         }
     }

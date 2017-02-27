@@ -5,7 +5,6 @@ import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -22,30 +21,18 @@ public class TabViewContainer extends CoordinatorLayout implements ShareContract
     private ShareContract.TabPresenter tabPresenter;
     private View rootView;
     private TabLayout tabLayout;
+    private Context context;
 
     public TabViewContainer(Context context)
     {
         super(context);
+        this.context = context;
         init();
     }
-
-    public TabViewContainer(Context context, AttributeSet attrs)
-    {
-        super(context, attrs);
-        init();
-    }
-
-    public TabViewContainer(Context context, AttributeSet attrs, int defStyleAttr)
-    {
-        super(context, attrs, defStyleAttr);
-        init();
-    }
-
-
 
     private void init()
     {
-        rootView = inflate(getContext(), R.layout.activity_main, this);
+        rootView = inflate(context, R.layout.activity_main, this);
         tabLayout = (TabLayout) rootView.findViewById(R.id.tab_layout);
         tabLayout.addTab(tabLayout.newTab().setText("Tab 1"));
         tabLayout.addTab(tabLayout.newTab().setText("Tab 2"));

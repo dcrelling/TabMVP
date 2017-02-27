@@ -1,8 +1,6 @@
 package com.example.runkeeper.tabmvp.views;
 
 import android.content.Context;
-import android.support.design.widget.CoordinatorLayout;
-import android.util.AttributeSet;
 import android.view.View;
 import android.widget.RelativeLayout;
 
@@ -27,21 +25,9 @@ public class GraphicView extends RelativeLayout implements ShareContract.Graphic
         init();
     }
 
-    public GraphicView(Context context, AttributeSet attrs)
-    {
-        super(context, attrs);
-        init();
-    }
-
-    public GraphicView(Context context, AttributeSet attrs, int defStyleAttr)
-    {
-        super(context, attrs, defStyleAttr);
-        init();
-    }
-
     private void init()
     {
-        rootView = inflate(getContext(), R.layout.fragment_main_three, this);
+        rootView = inflate(context, R.layout.fragment_main_three, this);
     }
 
     @Override
