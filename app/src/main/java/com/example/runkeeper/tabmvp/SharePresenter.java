@@ -4,6 +4,10 @@ package com.example.runkeeper.tabmvp;
 import android.content.Context;
 import android.view.View;
 
+import com.example.runkeeper.tabmvp.views.GraphicView;
+import com.example.runkeeper.tabmvp.views.MapView;
+import com.example.runkeeper.tabmvp.views.PhotoView;
+
 public class SharePresenter implements ShareContract.PhotoPresenter, ShareContract.MapPresenter, ShareContract.GraphicPresenter, ShareContract.TabPresenter
 {
 

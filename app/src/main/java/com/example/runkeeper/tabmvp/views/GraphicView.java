@@ -13,7 +13,7 @@ import com.example.runkeeper.tabmvp.ShareContract;
  * Created by davidcrelling on 2/24/17.
  */
 
-public class GraphicView extends CoordinatorLayout implements ShareContract.GraphicView
+public class GraphicView extends RelativeLayout implements ShareContract.GraphicView
 {
 
     private View rootView;
