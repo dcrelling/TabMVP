@@ -1,29 +1,23 @@
 package com.example.runkeeper.tabmvp;
 
 import android.os.Bundle;
-import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.example.runkeeper.tabmvp.views.TabViewContainer;
 
 public class ShareActivity extends AppCompatActivity implements ShareContract.Controller
 {
 
 
     private SharePresenter presenter;
-    private ViewPager mViewPager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         presenter = SharePresenter.Factory.create(this, this);
-//        TabViewContainer tabViewContainer = new TabViewContainer(this);
-//        tabViewContainer.setPresenter(presenter);
-//        tabViewContainer.setUpViewPagerAndAdaptor();
         setContentView(presenter.getStartView());
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);

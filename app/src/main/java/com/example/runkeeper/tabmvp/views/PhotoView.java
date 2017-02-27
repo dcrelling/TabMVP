@@ -15,18 +15,18 @@ public class PhotoView extends RelativeLayout implements ShareContract.PhotoView
 {
     private View rootView;
     private ShareContract.PhotoPresenter presenter;
-    private Context context;
+    private Context applicationContext;
 
     public PhotoView(Context context)
     {
         super(context);
-        this.context = context;
-        init();
+        this.applicationContext = context.getApplicationContext();
+        init(context);
     }
 
-    public void init()
+    public void init(Context activityContext)
     {
-        rootView = inflate(context, R.layout.fragment_main_one, this);
+        rootView = inflate(activityContext, R.layout.fragment_main_one, this);
     }
 
     @Override

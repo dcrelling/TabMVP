@@ -15,18 +15,18 @@ public class MapView extends RelativeLayout implements ShareContract.MapView
 {
     private View rootView;
     private ShareContract.MapPresenter presenter;
-    private Context context;
+    private Context applicationContext;
 
     public MapView(Context context)
     {
         super(context);
-        this.context = context;
-        init();
+        this.applicationContext = context.getApplicationContext();
+        init(context);
     }
 
-    private void init()
+    private void init(Context activityContext)
     {
-        rootView = inflate(context, R.layout.fragment_main_two, this);
+        rootView = inflate(activityContext, R.layout.fragment_main_two, this);
     }
 
     @Override

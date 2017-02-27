@@ -21,18 +21,18 @@ public class TabViewContainer extends CoordinatorLayout implements ShareContract
     private ShareContract.TabPresenter tabPresenter;
     private View rootView;
     private TabLayout tabLayout;
-    private Context context;
+    private Context applicationContext;
 
     public TabViewContainer(Context context)
     {
         super(context);
-        this.context = context;
-        init();
+        this.applicationContext = context.getApplicationContext();
+        init(context);
     }
 
-    private void init()
+    private void init(Context activityContext)
     {
-        rootView = inflate(context, R.layout.activity_main, this);
+        rootView = inflate(activityContext, R.layout.activity_main, this);
         tabLayout = (TabLayout) rootView.findViewById(R.id.tab_layout);
         tabLayout.addTab(tabLayout.newTab().setText("Tab 1"));
         tabLayout.addTab(tabLayout.newTab().setText("Tab 2"));

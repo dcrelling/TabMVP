@@ -16,18 +16,18 @@ public class GraphicView extends RelativeLayout implements ShareContract.Graphic
 
     private View rootView;
     private ShareContract.GraphicPresenter presenter;
-    private Context context;
+    private Context applicationContext;
 
     public GraphicView(Context context)
     {
         super(context);
-        this.context = context;
-        init();
+        this.applicationContext = context.getApplicationContext();
+        init(context);
     }
 
-    private void init()
+    private void init(Context activityContext)
     {
-        rootView = inflate(context, R.layout.fragment_main_three, this);
+        rootView = inflate(activityContext, R.layout.fragment_main_three, this);
     }
 
     @Override
